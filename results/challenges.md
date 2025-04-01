@@ -65,6 +65,6 @@ Running the model on a **live streaming system** required **low-latency optimiza
 
 ## 🔮 **Future Improvements**
 
-✅ Integrate a **multimodal approach** combining audio with **visual cues (lip movement analysis)**.  
+✅ Integrate a **Multimodal approach** combining audio with **visual cues (lip movement analysis)**.  
 ✅ Experiment with **transformer-based architectures** for improved sequential understanding.  
 ✅ Develop a **lightweight version** for **edge deployment on mobile devices**.

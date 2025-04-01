@@ -79,4 +79,4 @@ The following three approaches are the most promising for detecting AI-generated
 2. **Deep Learning-Based End-to-End Countermeasures** for its direct approach and robust generalization.
 3. **Compression & Channel Augmentation** for its focus on real-world audio quality and its applicability in varying communication platforms.
 
-These models offer a balance between performance, real-world applicability, and computational efficiency. Future research and development can focus on optimizing these models for even better real-time performance in dynamic and noisy environments.
+These models offer a balance between performance real-world applicability, and computational efficiency. Future research and development can focus on optimizing these models for even better real-time performance in dynamic and noisy environments.

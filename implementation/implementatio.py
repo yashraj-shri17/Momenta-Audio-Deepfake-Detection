@@ -11,7 +11,7 @@ import pandas as pd
 from pydub import AudioSegment
 
 # --------------------
-# 1. Convert MP3 to FLAC
+# 1. Conversion from MP3 to FLAC
 # --------------------
 def convert_mp3_to_flac(mp3_file, output_folder="converted_flac"):
     if not os.path.exists(output_folder):

@@ -66,7 +66,7 @@ Execute cells in `implementation/implementation.ipynb` to:
 - Configure training parameters  
 
 3. **Evaluation**  
-Model outputs:  
+Model Outputs:  
 - Accuracy metrics  
 - Confusion matrices  
 - Sample predictions with confidence scores  

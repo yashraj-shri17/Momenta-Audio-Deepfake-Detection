@@ -113,4 +113,3 @@ Momenta-Audio-Deepfake-Detection/
 > **Note**: Results may vary based on hardware specs and dataset quality. For reproducible results, use identical environment configurations.
 
 ---
-Answer from Perplexity: pplx.ai/share

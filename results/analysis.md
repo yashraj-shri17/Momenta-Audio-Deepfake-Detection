@@ -57,4 +57,3 @@ The **Deep Learning-Based End-to-End Countermeasure (CNN, CNN-GRU)** approach ha
 
 ## 🏆 References
 1. ASVspoof Challenge Dataset - [Zenodo](https://zenodo.org/records/14498691)
-2. Research Papers on Deepfake Audio Detection - [arXiv](https://arxiv.org/)

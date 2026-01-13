@@ -53,23 +53,23 @@ Download ASVspoof 5 dataset or use alternative datasets from the [curated list](
 
 ## 📝 Usage  
 **Workflow**  
-1. **Preprocessing**  
-```python
-# Sample preprocessing code
-from audio_processor import load_dataset
-dataset = load_dataset("path/to/audio_files")
-```
 
-2. **Training**  
-Execute cells in `implementation/implementation.ipynb` to:  
-- Initialize model architecture  
-- Configure training parameters  
+1. **Training**  
+Run the training pipeline from the command line:  
+```bash
+cd implementation
+python main.py train
+```
+Adjust configurations in `implementation/src/config.py` as needed.
+
+2. **Prediction**  
+Run inference on a single audio file:  
+```bash
+python main.py predict "path/to/audio/file.mp3"
+``` 
 
 3. **Evaluation**  
-Model Outputs:  
-- Accuracy metrics  
-- Confusion matrices  
-- Sample predictions with confidence scores  
+Model performance metrics (loss) are logged during training.  
 
 ---
 
@@ -92,14 +92,36 @@ Model Outputs:
 ## 📂 Repository Structure  
 ```
 Momenta-Audio-Deepfake-Detection/
-├── research_selection.md       # Methodology documentation
 ├── implementation/
-│   ├── implementation.ipynb    # Core training/evaluation notebook
-│   ├── requirements.txt        # Python dependencies  
-│   └── dataset_info.md         # Dataset sources & specs
+│   ├── app.py                  # Streamlit Web App
+│   ├── main.py                 # CLI Entry point
+│   ├── Dockerfile              # Container definition
+│   ├── src/                    # Source code package
+│   │   ├── config.py           # Configuration
+│   │   ├── dataset.py          # Data loading
+│   │   ├── model.py            # Model architecture
+│   │   ├── train.py            # Training pipeline
+│   │   ├── predict.py          # Inference engine & Model Handler
+│   │   └── utils.py            # Utilities
+│   ├── scripts/                # Helper scripts
+│   │   ├── create_mini_dataset.py
+│   │   └── download_data.py
+│   ├── tests/                  # Unit tests
+│   └── requirements.txt        # Dependencies
 └── results/
-    ├── analysis.md             # Detailed performance breakdown
-    └── challenges.md           # Implementation hurdles & solutions
+```
+
+## ✅ Testing
+Run the unit test suite to verify model integrity:
+```bash
+python -m unittest discover tests
+```
+
+## 🐳 Docker Support
+Build and run the containerized application:
+```bash
+docker build -t momenta-detector .
+docker run -p 8501:8501 momenta-detector
 ```
 
 ---

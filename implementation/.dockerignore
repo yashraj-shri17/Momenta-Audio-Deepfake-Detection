@@ -1,0 +1,30 @@
+
+# Ignore data directories
+dataset/
+mock_data/
+mini_dataset/
+results/
+
+# Ignore cache and intermediate files
+__pycache__/
+*.pyc
+.ipynb_checkpoints
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Ignore scripts and tests for production image
+scripts/
+tests/
+
+# Ignore git
+.git/
+.gitignore
+
+# Ignore VSCode settings
+.vscode/
+
+# Ignore environment files
+.env
+venv/
+env/

@@ -1,0 +1,88 @@
+2026-01-13 21:30:13,774 - src.train - INFO - Starting training process...
+2026-01-13 21:30:13,775 - src.train - ERROR - Dataset details missing. Please check configuration.
+2026-01-13 21:30:47,172 - src.train - INFO - Starting training process...
+2026-01-13 21:30:47,173 - src.train - ERROR - Dataset details missing. Please check configuration.
+2026-01-13 21:40:01,692 - src.train - INFO - Starting training process...
+2026-01-13 21:40:01,693 - src.dataset - INFO - Loaded 2 samples. Skipped 0 missing files.
+2026-01-13 21:40:01,694 - src.train - INFO - Using device: cuda
+2026-01-13 21:40:04,091 - src.predict - INFO - Predicting for file: mock_data/audio/file_001.flac
+2026-01-13 21:40:04,092 - src.predict - ERROR - Model file not found at models/cnn_gru_model.pth. Please train the model first.
+2026-01-13 21:42:12,956 - src.train - INFO - Starting training process...
+2026-01-13 21:42:12,957 - src.dataset - INFO - Loaded 2 samples. Skipped 0 missing files.
+2026-01-13 21:42:12,957 - src.train - INFO - Using device: cpu
+2026-01-13 21:43:02,024 - src.train - INFO - Starting training process...
+2026-01-13 21:43:02,025 - src.dataset - INFO - Loaded 2 samples. Skipped 0 missing files.
+2026-01-13 21:43:02,025 - src.train - INFO - Using device: cpu
+2026-01-13 21:43:05,819 - src.train - INFO - Epoch [1/10], Loss: 0.6938, Accuracy: 50.00%
+2026-01-13 21:43:09,046 - src.train - INFO - Epoch [2/10], Loss: 0.6938, Accuracy: 50.00%
+2026-01-13 21:43:12,200 - src.train - INFO - Epoch [3/10], Loss: 0.6935, Accuracy: 50.00%
+2026-01-13 21:43:15,103 - src.train - INFO - Epoch [4/10], Loss: 0.6932, Accuracy: 50.00%
+2026-01-13 21:43:19,347 - src.train - INFO - Epoch [5/10], Loss: 0.6932, Accuracy: 50.00%
+2026-01-13 21:43:22,432 - src.train - INFO - Epoch [6/10], Loss: 0.6934, Accuracy: 50.00%
+2026-01-13 21:43:25,263 - src.train - INFO - Epoch [7/10], Loss: 0.6933, Accuracy: 50.00%
+2026-01-13 21:43:28,332 - src.train - INFO - Epoch [8/10], Loss: 0.6932, Accuracy: 50.00%
+2026-01-13 21:43:31,285 - src.train - INFO - Epoch [9/10], Loss: 0.6932, Accuracy: 50.00%
+2026-01-13 21:43:34,147 - src.train - INFO - Epoch [10/10], Loss: 0.6932, Accuracy: 50.00%
+2026-01-13 21:43:34,167 - src.train - INFO - Model saved to models/cnn_gru_model.pth
+2026-01-13 22:00:31,114 - src.train - INFO - Starting training process...
+2026-01-13 22:00:31,116 - src.dataset - INFO - Loaded 2 samples. Skipped 0 missing files.
+2026-01-13 22:00:31,118 - src.train - INFO - Using device: cpu
+2026-01-13 22:00:37,562 - src.train - INFO - Epoch [1/10], Loss: 0.6917, Accuracy: 50.00%
+2026-01-13 22:00:41,513 - src.train - INFO - Epoch [2/10], Loss: 0.6801, Accuracy: 50.00%
+2026-01-13 22:00:44,757 - src.train - INFO - Epoch [3/10], Loss: 0.6667, Accuracy: 50.00%
+2026-01-13 22:00:48,189 - src.train - INFO - Epoch [4/10], Loss: 0.6496, Accuracy: 50.00%
+2026-01-13 22:00:51,693 - src.train - INFO - Epoch [5/10], Loss: 0.6267, Accuracy: 100.00%
+2026-01-13 22:00:54,954 - src.train - INFO - Epoch [6/10], Loss: 0.5959, Accuracy: 100.00%
+2026-01-13 22:00:58,022 - src.train - INFO - Epoch [7/10], Loss: 0.5546, Accuracy: 100.00%
+2026-01-13 22:01:01,456 - src.train - INFO - Epoch [8/10], Loss: 0.4998, Accuracy: 100.00%
+2026-01-13 22:01:04,650 - src.train - INFO - Epoch [9/10], Loss: 0.4284, Accuracy: 100.00%
+2026-01-13 22:01:08,778 - src.train - INFO - Epoch [10/10], Loss: 0.3393, Accuracy: 100.00%
+2026-01-13 22:01:08,802 - src.train - INFO - Model saved to models/cnn_gru_model.pth
+2026-01-13 22:04:06,796 - __main__ - INFO - Downloading from https://datashare.ed.ac.uk/bitstream/handle/10283/3336/LA.zip...
+2026-01-13 22:04:51,235 - __main__ - ERROR - Failed to setup dataset: ("Connection broken: ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None)", ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+2026-01-13 22:05:07,922 - __main__ - INFO - File dataset\LA.zip already exists. Skipping download.
+2026-01-13 22:05:07,923 - __main__ - INFO - Extracting dataset\LA.zip...
+2026-01-13 22:05:07,944 - __main__ - ERROR - Failed to setup dataset: File is not a zip file
+2026-01-13 22:05:38,902 - __main__ - INFO - File dataset\LA.zip already exists. Skipping download.
+2026-01-13 22:05:38,902 - __main__ - INFO - Extracting dataset\LA.zip...
+2026-01-13 22:05:38,903 - __main__ - ERROR - Failed to setup dataset: File is not a zip file
+2026-01-13 22:06:17,572 - __main__ - INFO - Downloading from https://datashare.ed.ac.uk/bitstream/handle/10283/3336/LA.zip...
+2026-01-13 22:08:47,417 - __main__ - INFO - Streaming LibriSpeech (Real Data)...
+2026-01-13 22:08:57,479 - __main__ - INFO - Generating 60 samples...
+2026-01-13 22:09:13,434 - __main__ - ERROR - Error processing sample 0: To support decoding audio data, please install 'torchcodec'.
+2026-01-13 22:09:13,439 - __main__ - INFO - Mini Dataset Generation Complete!
+2026-01-13 22:11:24,578 - __main__ - INFO - Streaming LibriSpeech (Real Data)...
+2026-01-13 22:11:34,312 - __main__ - ERROR - Failed to load HuggingFace dataset: BuilderConfig 'clean.100' not found. Available: ['clean', 'other', 'all']
+2026-01-13 22:14:45,347 - src.train - INFO - Starting training process...
+2026-01-13 22:14:45,350 - src.dataset - INFO - Loaded 60 samples. Skipped 0 missing files.
+2026-01-13 22:14:45,352 - src.train - INFO - Using device: cpu
+2026-01-13 22:16:41,074 - src.train - INFO - Epoch [1/10], Loss: 0.6098, Accuracy: 71.67%
+2026-01-13 22:18:23,103 - src.train - INFO - Epoch [2/10], Loss: 0.0234, Accuracy: 100.00%
+2026-01-13 22:19:56,599 - src.train - INFO - Epoch [3/10], Loss: 0.0005, Accuracy: 100.00%
+2026-01-13 22:21:36,445 - src.train - INFO - Epoch [4/10], Loss: 0.0004, Accuracy: 100.00%
+2026-01-13 22:23:09,880 - src.train - INFO - Epoch [5/10], Loss: 0.0004, Accuracy: 100.00%
+2026-01-13 22:23:13,680 - src.train - INFO - Starting training process...
+2026-01-13 22:23:13,683 - src.dataset - INFO - Loaded 60 samples. Skipped 0 missing files.
+2026-01-13 22:23:13,685 - src.train - INFO - Using device: cpu
+2026-01-13 22:26:01,469 - src.train - INFO - Epoch [1/10], Loss: 0.6089, Accuracy: 58.33%
+2026-01-13 22:28:21,104 - src.train - INFO - Epoch [2/10], Loss: 0.0203, Accuracy: 100.00%
+2026-01-13 22:32:56,837 - src.train - INFO - Epoch [3/10], Loss: 0.0003, Accuracy: 100.00%
+2026-01-13 22:35:57,913 - src.train - INFO - Epoch [4/10], Loss: 0.0003, Accuracy: 100.00%
+2026-01-13 22:35:57,933 - src.dataset - ERROR - Error loading C:\Users\des\Desktop\ALL AI\Momenta-Audio-Deepfake-Detection\implementation\mini_dataset\fake\fake_007.flac: Error opening 'C:\\Users\\des\\Desktop\\ALL AI\\Momenta-Audio-Deepfake-Detection\\implementation\\mini_dataset\\fake\\fake_007.flac': System error.
+2026-01-13 22:37:08,529 - src.train - INFO - Starting training process...
+2026-01-13 22:37:08,532 - src.dataset - INFO - Loaded 60 samples. Skipped 0 missing files.
+2026-01-13 22:37:08,534 - src.train - INFO - Using device: cpu
+2026-01-13 22:38:38,157 - src.train - INFO - Starting training process...
+2026-01-13 22:38:38,160 - src.dataset - INFO - Loaded 60 samples. Skipped 0 missing files.
+2026-01-13 22:38:38,160 - src.train - INFO - Using device: cpu
+2026-01-13 22:40:20,920 - src.train - INFO - Epoch [1/10], Loss: 0.6078, Accuracy: 75.00%
+2026-01-13 22:42:17,879 - src.train - INFO - Epoch [2/10], Loss: 0.1868, Accuracy: 96.67%
+2026-01-13 22:44:28,807 - src.train - INFO - Epoch [3/10], Loss: 0.0053, Accuracy: 100.00%
+2026-01-13 22:49:40,962 - src.train - INFO - Epoch [4/10], Loss: 0.0046, Accuracy: 100.00%
+2026-01-13 22:51:55,076 - src.train - INFO - Epoch [5/10], Loss: 0.0029, Accuracy: 100.00%
+2026-01-13 22:56:48,113 - src.train - INFO - Epoch [6/10], Loss: 0.0021, Accuracy: 100.00%
+2026-01-13 23:01:14,549 - src.train - INFO - Epoch [7/10], Loss: 0.0016, Accuracy: 100.00%
+2026-01-13 23:04:34,454 - src.train - INFO - Epoch [8/10], Loss: 0.0013, Accuracy: 100.00%
+2026-01-13 23:07:41,545 - src.train - INFO - Epoch [9/10], Loss: 0.0011, Accuracy: 100.00%
+2026-01-13 23:10:31,229 - src.train - INFO - Epoch [10/10], Loss: 0.0009, Accuracy: 100.00%
+2026-01-13 23:10:31,576 - src.train - INFO - Model saved to models/cnn_gru_model.pth

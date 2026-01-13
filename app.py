@@ -3,11 +3,13 @@ import streamlit as st
 import os
 import torch
 import torchaudio
+import matplotlib
+matplotlib.use('Agg') # Memory optimization: Non-interactive backend
 import matplotlib.pyplot as plt
 import numpy as np
 import plotly.graph_objects as go
 import tempfile
-# from src.predict import predict (Removed)
+import gc # Garbage Collection
 from src.utils import setup_logging
 
 # Page Config
@@ -17,6 +19,9 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded"
 )
+
+# ... (CSS code remains, implied to be after this block in file structure, but valid python needs strict order. 
+# Since replace_file_content replaces lines, I just need to match the target content accurately.)
 
 # -------------------------------------------------------------
 # CSS Styling (The "Sexy" Part)
@@ -118,17 +123,28 @@ st.markdown("""
 # -------------------------------------------------------------
 
 def plot_waveform(audio_path):
-    waveform, sr = torchaudio.load(audio_path)
+    # MEMORY FIX: Only load first 10 seconds for visualization
+    # 10s * 16000Hz = 160000 samples
+    try:
+        waveform, sr = torchaudio.load(audio_path, num_frames=160000) 
+    except:
+        waveform, sr = torchaudio.load(audio_path) # Fallback if short
+
     waveform = waveform.numpy()
     
     fig = plt.figure(figsize=(10, 3), facecolor='none')
     ax = fig.add_subplot(111)
-    ax.plot(waveform[0], color='#3b82f6', alpha=0.7, linewidth=0.5)
+    ax.plot(waveform[0], color='#FFD700', alpha=0.7, linewidth=0.5)
     ax.axis('off')
+    plt.close(fig) # Explicit close
     return fig
 
 def plot_spectrogram(audio_path):
-    waveform, sr = torchaudio.load(audio_path)
+    try:
+        waveform, sr = torchaudio.load(audio_path, num_frames=160000)
+    except:
+        waveform, sr = torchaudio.load(audio_path)
+
     specgram = torchaudio.transforms.Spectrogram()(waveform)
     specgram_db = torchaudio.transforms.AmplitudeToDB()(specgram)
     
@@ -136,6 +152,7 @@ def plot_spectrogram(audio_path):
     ax = fig.add_subplot(111)
     ax.imshow(specgram_db[0].numpy(), origin='lower', aspect='auto', cmap='magma')
     ax.axis('off')
+    plt.close(fig) # Explicit close
     return fig
 
 def create_gauge(score):

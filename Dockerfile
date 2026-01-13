@@ -6,6 +6,15 @@ FROM python:3.9-slim
 # Set the working directory in the container
 WORKDIR /app
 
+# Memory Optimization for Render Free Tier (512MB Limit)
+# These prevent PyTorch/NumPy from spawning multiple threads which eats RAM individually
+ENV OMP_NUM_THREADS=1
+ENV MKL_NUM_THREADS=1
+ENV OPENBLAS_NUM_THREADS=1
+ENV VECLIB_MAXIMUM_THREADS=1
+ENV NUMEXPR_NUM_THREADS=1
+ENV PYTORCH_JIT=0
+
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
     ffmpeg \

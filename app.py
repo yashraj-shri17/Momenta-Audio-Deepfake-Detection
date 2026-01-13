@@ -234,32 +234,59 @@ if uploaded_file is not None:
         st.markdown('<div class="glass-card">', unsafe_allow_html=True)
         st.markdown("#### 🔍 Analysis Results")
         
+        # DEBUG EXPANDER
+        with st.expander("🛠️ System Diagnostics"):
+            st.write(f"Current Dir: {os.getcwd()}")
+            st.write(f"Model Path Config: {detector.model_path if detector else 'Not Loaded'}")
+            if os.path.exists("models/cnn_gru_model.pth"):
+                st.success(f"Model File Found ({os.path.getsize('models/cnn_gru_model.pth')} bytes)")
+            else:
+                st.error("CRITICAL: Model File NOT Found in 'models/'")
+            
+            try:
+                import soundfile
+                st.success("SoundFile Backend: Available")
+            except ImportError as e:
+                st.error(f"SoundFile Backend Missing: {e}")
+
         if st.button("Analyze Audio", key="analyze_btn"):
+            if not detector:
+                 st.error("Model failed to load. Check diagnostics.")
+                 st.stop()
+                 
             with st.spinner("Analyzing spectral artifacts..."):
                 try:
-                    # Run Prediction
+                     # 1. Prediction
+                    st.toast("Processing Audio...")
                     label, score = detector.predict(tfile_path)
                     
-                    # Display Gauge
-                    st.plotly_chart(create_gauge(score), use_container_width=True)
-                    
-                    # Details
-                    st.markdown("---")
-                    d_col1, d_col2 = st.columns(2)
-                    d_col1.metric("Prediction", label.upper())
-                    d_col2.metric("Confidence Score", f"{score:.4f}")
-                    
-                    # Spectrogram
-                    st.markdown("#### 📊 Spectral Analysis")
-                    st.pyplot(plot_spectrogram(tfile_path))
-                    
-                    if label == "spoof":
-                        st.error("⚠️ **Warning:** High probability of AI synthesis detected.")
+                    if label == "error":
+                        st.error("Prediction failed inside the model. Check logs.")
                     else:
-                        st.success("✅ **Verified:** Audio appears to be authentic.")
+                        # 2. Display Gauge
+                        st.plotly_chart(create_gauge(score), use_container_width=True)
+                        
+                        # 3. Details
+                        st.markdown("---")
+                        d_col1, d_col2 = st.columns(2)
+                        d_col1.metric("Prediction", label.upper())
+                        d_col2.metric("Confidence Score", f"{score:.4f}")
+                        
+                        # 4. Spectrogram
+                        st.markdown("#### 📊 Spectral Analysis")
+                        try:
+                            st.pyplot(plot_spectrogram(tfile_path))
+                        except Exception as e:
+                            st.warning(f"Spectrogram failed (Non-critical): {e}")
+                        
+                        if label == "spoof":
+                            st.error("⚠️ **Warning:** High probability of AI synthesis detected.")
+                        else:
+                            st.success("✅ **Verified:** Audio appears to be authentic.")
                         
                 except Exception as e:
-                    st.error(f"Error during analysis: {e}")
+                    st.error(f"CRITICAL ERROR during analysis pipeline: {e}")
+                    st.exception(e) # Print full trace to UI
         else:
             st.info("Click 'Analyze Audio' to start the deepfake detection process.")
             
